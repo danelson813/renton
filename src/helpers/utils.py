@@ -3,10 +3,13 @@ from bs4 import BeautifulSoup as bs
 from dotenv import load_dotenv
 from fake_useragent import UserAgent
 from pathlib import Path
+from src.helpers.decorators_ import log, timing_decorator
 
 load_dotenv()
 
 
+@timing_decorator
+@log
 def get_soup_pw(url: str) -> bs:
     ua = UserAgent()
     with sync_playwright() as p:

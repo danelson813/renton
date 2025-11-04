@@ -1,8 +1,9 @@
 from loguru import logger
 
 from .utils import get_soup_pw
+from .decorators_ import log
 
-__all__ = ["get_soup_pw"]
+__all__ = ["get_soup_pw", "log"]
 
 
 logger.add(

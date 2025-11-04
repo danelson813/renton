@@ -3,7 +3,8 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 
-from .helpers import get_soup_pw
+from src.helpers import get_soup_pw
+
 
 load_dotenv()
 
