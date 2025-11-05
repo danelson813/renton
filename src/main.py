@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 
 from src.helpers import get_soup_pw
+from src.helpers.to_parquet import save_pq, read_parquet
 
 
 load_dotenv()
@@ -26,3 +27,7 @@ for index, book in enumerate(books):
     results.append(result)
 df = pd.DataFrame(results)
 df.to_csv("data/results.csv", index=0)
+save_pq(df, "data/data.parquet")
+df3 = read_parquet("data/data.parquet")
+print("df3")
+print(df3.head())
